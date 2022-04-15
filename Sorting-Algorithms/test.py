@@ -15,7 +15,7 @@ class window:
         self.root.title(title)
         self.root.resizable(width=False, height=False)
         Label(self.root, text='Sorting Algorithm Visualizer').grid(
-            row=0, columnspan=6)
+            row=0, columnspan=8)
         #  Buttons
         self.bs = ttk.Button(self.root, text='Bubble Sort', style='info.TButton', padding=5, width=15,
                              command=self.bubble)
@@ -42,9 +42,12 @@ class window:
                                    command=lambda x: self.slide_function())
         self.arraysize.grid(row=2, column=1, columnspan=3)
 
-        ttk.Button(self.root, text='Shuffle', style='info.Outline.TButton', padding=5, width=15,
-                   command=self.shuffle).grid(column=5, row=1, padx=5, pady=5)
-
+        ttk.Label(self.root, text='      Bubble sort      ').grid(
+            row=0, column=6, padx=5, pady=5)
+        ttk.Label(self.root, text='Time complexity -> O(n^2) \nSpace complexity -> O(1) Constant time').grid(
+            row=1, column=6, padx=5, pady=5)
+        ttk.Label(self.root, text='Bubble sort is a simple sorting algorithm. \nThis sorting algorithm is comparison-based \nalgorithm in which each pair of adjacent \nelements is compared and the elements \nare swapped if they are not in \norder. This algorithm is not suitable \nfor large data sets as its average \nand worst case complexity \nare of Ο(n2) where n is the number \nof items. \nbegin BubbleSort(list)\n\tfor all elements of list\n\t\tif list[i] > list[i+1]\n\t\t\tswap(list[i], list[i+1])\n\t\t end if\n\t end for\n\treturn list\nend BubbleSort').grid(
+            row=4, column=6, padx=5, pady=5)
         #    Canvas
         self.canvas = Canvas(self.root, width=800-5, height=400, highlightbackground="dodgerblue", highlightthickness=2,
                              bg='black')
